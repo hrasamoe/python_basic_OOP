@@ -1,39 +1,41 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__(self, name: str, height: int, age: int) -> None:
+    def __init__(self, name: str, height: float, day: int) -> None:
         self.name: str = name
-        self.height: int = height
-        self.age: int = age
-        self.initial_height: int = height
+        self.height: float = height
+        self.day: int = day
+        self.initial_height: float = height
 
-    def grow(self, amount: int = 1) -> None:
+    def grow(self, amount: float = 0.8) -> None:
         self.height += amount
 
-    def grow_age_by_day(self) -> None:
-        self.age += 1
+    def age(self) -> None:
+        self.day += 1
 
     def get_info(self) -> str:
         return (
-            f"{self.name}: {self.height}cm, {self.age} days old"
+            f"{self.name}: {round(self.height, 2)}cm, {self.day} days old"
         )
 
-    def weekly_growth(self) -> int:
-        return self.height - self.initial_height
+    def weekly_growth(self) -> float:
+        return round(self.height - self.initial_height)
 
 
 if __name__ == "__main__":
     plants: list[Plant] = [
-        Plant("Rose", 25, 30)
+        Plant("Rose", 25.0, 30)
     ]
+    print("=== Garden Plant Growth ===")
     print("=== Day 1 ===")
     for plant in plants:
-        print(plant.get_info())
-    for day in range(1, 7):
+        print(f"{plant.get_info()}")
+    for day in range(2, 9):
         for plant in plants:
-            plant.grow(amount=1)
-            plant.grow_age_by_day()
-    print("=== Day 7 ===")
+            plant.grow()
+            plant.age()
+        print(f"=== Day {day} ===")
+        for plant in plants:
+            print(plant.get_info())
     for plant in plants:
-        print(plant.get_info())
-        print(f"Growth this week: +{plant.weekly_growth()}cm")
+        print(f"Growth this week: {plant.weekly_growth()}cm")
