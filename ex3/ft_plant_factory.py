@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__(self, name: str, starting_height: float, starting_age: int) -> None:
+    def __init__(self, name: str,
+                 starting_height: float, starting_age: int) -> None:
         self.name: str = name
-        self.height: float = round(starting_height,1)
+        self.height: float = round(starting_height, 1)
         self.age: int = starting_age
 
     def grow(self) -> str:

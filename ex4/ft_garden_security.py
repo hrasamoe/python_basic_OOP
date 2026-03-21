@@ -4,9 +4,10 @@ class SecurePlant:
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name: str = name
         self.__height: float = height
-        self.__age: int = age      
-        print(f"Plant created: {self.name}: {self.__height}cm, {self.__age} days old")
-        
+        self.__age: int = age
+        print(f"Plant created: {self.name}: {self.__height}cm,"
+              "{self.__age} days old")
+
     def set_height(self, height: int) -> None:
         if height < 0:
             print(

@@ -46,7 +46,8 @@ class Tree(Plant):
     def produce_shade(self):
         print(f"[asking the {self.name} to produce shade]")
         print(f"Tree {self.name} now produces a shade of "
-              f"{round(self.height, 1)}cm long and {round(self.trunk_diameter, 1)}cm wide.")
+              f"{round(self.height, 1)}cm long and"
+              "{round(self.trunk_diameter, 1)}cm wide.")
 
     def show(self):
         super().show()
