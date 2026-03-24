@@ -129,6 +129,7 @@ if __name__ == "__main__":
     display_plant_stat(rose)
     print("[asking the rose to grow and bloom]")
     rose.grow(8)
+    rose.bloom()
     rose.show()
     display_plant_stat(rose)
 

@@ -30,7 +30,7 @@ if __name__ == "__main__":
     print("=== Day 1 ===")
     for plant in plants:
         print(f"{plant.get_info()}")
-    for day in range(2, 9):
+    for day in range(2, 8):
         for plant in plants:
             plant.grow()
             plant.age()

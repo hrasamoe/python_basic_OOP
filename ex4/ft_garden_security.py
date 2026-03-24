@@ -5,8 +5,8 @@ class SecurePlant:
         self.name: str = name
         self.__height: float = height
         self.__age: int = age
-        print(f"Plant created: {self.name}: {self.__height}cm,"
-              "{self.__age} days old")
+        print(f"Plant created: {self.name}: {self.__height}cm, "
+              f"{self.__age} days old")
 
     def set_height(self, height: int) -> None:
         if height < 0:
@@ -16,7 +16,7 @@ class SecurePlant:
             print("Height update rejected")
         else:
             self.__height = height
-            print(f"\nHeight updated: {round(self.__height, 1)}cm")
+            print(f"\nHeight updated: {round(self.__height)}cm")
 
     def set_age(self, age: int) -> None:
         if age < 0:
@@ -34,8 +34,8 @@ class SecurePlant:
 
     def show(self) -> None:
         print(
-            f"\nCurrent plant: {self.name} "
-            f"({round(self.__height, 1)}cm, {self.__age} days old)"
+            f"\nCurrent state: {self.name} "
+            f"{round(self.__height, 1)}cm, {self.__age} days old"
         )
 
 

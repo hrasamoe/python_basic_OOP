@@ -13,7 +13,7 @@ class Plant:
 
     def show(self) -> str:
         return (
-            f"{self.name} ({self.height}cm, {self.age} days)"
+            f"{self.name} {self.height}cm, {self.age} days old"
         )
 
 
